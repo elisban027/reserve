@@ -1,0 +1,151 @@
+/* src/components/styles/ReservaList.css */
+
+.reserva-list-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* Sombra suave para un aspecto flotante */
+    overflow: hidden; /* Asegura que el contenido interno (tabla) no se desborde */
+    padding: 25px;
+    border: 1px solid #e0e0e0; /* Borde sutil */
+}
+
+.no-reservas-message {
+    text-align: center;
+    color: #666;
+    font-size: 1.15em;
+    padding: 40px 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    margin-top: 15px;
+    border: 1px dashed #ccc;
+}
+
+.table-responsive {
+    overflow-x: auto; /* Permite desplazamiento horizontal en pantallas pequeñas */
+    -webkit-overflow-scrolling: touch; /* Suaviza el scroll en iOS */
+}
+
+.reserva-table {
+    width: 100%;
+    border-collapse: collapse; /* Elimina los espacios entre celdas */
+    min-width: 800px; /* Asegura que la tabla no se colapse demasiado en pantallas pequeñas */
+    font-size: 0.95em;
+}
+
+.reserva-table th,
+.reserva-table td {
+    padding: 15px 20px; /* Más padding para mayor legibilidad */
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0; /* Líneas divisorias más suaves */
+}
+
+.reserva-table th {
+    background-color: #34495e; /* Azul oscuro elegante para el encabezado */
+    color: white;
+    font-weight: 700; /* Negrita */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    letter-spacing: 0.08em; /* Espaciado entre letras */
+    white-space: nowrap; /* Evita que el texto del encabezado se rompa */
+}
+
+/* Estilo para las filas del cuerpo de la tabla */
+.reserva-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.reserva-table tbody tr:hover {
+    background-color: #f5f5f5; /* Color de fondo al pasar el ratón */
+}
+
+/* Última fila sin borde inferior */
+.reserva-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Columna de acciones */
+.reserva-actions {
+    display: flex;
+    gap: 10px; /* Espacio entre los botones de acción */
+    flex-wrap: wrap; /* Permite que los botones se envuelvan si no hay espacio */
+    justify-content: flex-start; /* Alinea los botones al inicio */
+}
+
+/* Estilos base para los botones dentro de la tabla */
+.button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px; /* Bordes más redondeados */
+    font-weight: 600; /* Semi-negrita */
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
+    font-size: 0.85em;
+    white-space: nowrap; /* Evita que el texto del botón se rompa */
+}
+
+.button-edit {
+    background-color: #007bff; /* Azul primario */
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.2);
+}
+
+.button-edit:hover {
+    background-color: #0056b3; /* Azul más oscuro */
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+.button-edit:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0, 123, 255, 0.2);
+}
+
+.button-delete {
+    background-color: #dc3545; /* Rojo peligro */
+    color: white;
+    box-shadow: 0 2px 5px rgba(220, 53, 69, 0.2);
+}
+
+.button-delete:hover {
+    background-color: #c82333; /* Rojo más oscuro */
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+}
+
+.button-delete:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(220, 53, 69, 0.2);
+}
+
+/* Responsividad para la tabla */
+@media (max-width: 768px) {
+    .reserva-table {
+        min-width: 600px; /* Un poco menos ancho para tabletas */
+    }
+    .reserva-table th,
+    .reserva-table td {
+        padding: 12px 15px; /* Menos padding */
+        font-size: 0.9em;
+    }
+    .button {
+        padding: 7px 12px;
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 500px) {
+    .reserva-list-container {
+        padding: 15px;
+    }
+    .reserva-table {
+        min-width: 500px; /* Más estrecho para móviles pequeños */
+    }
+    .reserva-table th,
+    .reserva-table td {
+        padding: 10px 12px;
+        font-size: 0.85em;
+    }
+    .reserva-actions {
+        flex-direction: column; /* Botones apilados verticalmente */
+        gap: 5px;
+    }
+}

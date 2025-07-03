@@ -1,0 +1,155 @@
+/* src/components/layout/styles/Footer.css */
+
+.app-footer {
+    background-color: #2c3e50; /* Un azul oscuro elegante */
+    color: #ecf0f1; /* Gris claro para el texto */
+    padding: 40px 20px 20px; /* Padding superior, horizontal y inferior */
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 50px; /* Espacio encima del footer */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave superior */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap; /* Permite que las secciones se envuelvan en pantallas pequeñas */
+    justify-content: space-between;
+    gap: 30px; /* Espacio entre secciones */
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Separador suave */
+}
+
+.footer-section {
+    flex: 1; /* Distribuye el espacio equitativamente */
+    min-width: 250px; /* Ancho mínimo para cada columna antes de envolver */
+}
+
+.footer-heading {
+    font-size: 1.4em;
+    color: #ff6f00; /* Naranja para los títulos */
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.footer-about p {
+    font-size: 0.95em;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.footer-about .contact-info {
+    font-size: 0.9em;
+}
+
+.footer-about .contact-info i {
+    margin-right: 8px;
+    color: #ff6f00; /* Iconos naranjas */
+}
+
+/* Enlaces del Footer */
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-link {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 0.95em;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block; /* Para que el transform funcione */
+}
+
+.footer-link:hover {
+    color: #ff6f00;
+    text-decoration: underline;
+    transform: translateX(5px); /* Pequeño desplazamiento al pasar el ratón */
+}
+
+/* Iconos Sociales */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-icon {
+    color: #ecf0f1;
+    font-size: 1.5em;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.social-icon:hover {
+    color: #ff6f00;
+    transform: translateY(-3px); /* Efecto de "rebote" */
+}
+
+/* Sección inferior del Footer */
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 0.85em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Media Queries para responsividad del Footer */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Apila las secciones verticalmente */
+        align-items: center; /* Centra las secciones */
+        text-align: center;
+    }
+
+    .footer-section {
+        min-width: 100%; /* Ocupa todo el ancho disponible */
+        padding-bottom: 25px;
+    }
+
+    .footer-section:last-child {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Vuelve a añadir borde para separar del copyright */
+    }
+
+    .footer-links ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 20px; /* Espacio entre los elementos de la lista */
+    }
+    .footer-links ul li {
+        margin-bottom: 0; /* Elimina margen inferior de items li */
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        padding-top: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-footer {
+        padding: 30px 15px 15px;
+    }
+    .footer-heading {
+        font-size: 1.2em;
+        margin-bottom: 15px;
+    }
+    .footer-about p, .contact-info, .footer-link {
+        font-size: 0.88em;
+    }
+    .social-icon {
+        font-size: 1.3em;
+    }
+    .footer-bottom {
+        font-size: 0.78em;
+    }
+}

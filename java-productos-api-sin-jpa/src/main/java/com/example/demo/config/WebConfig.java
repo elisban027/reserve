@@ -17,6 +17,7 @@ public class WebConfig {
                         .allowedOrigins("http://localhost:3002")  // Permite solicitudes desde este origen
                         .allowedMethods("GET", "POST", "PUT", "DELETE")  // Métodos HTTP permitidos
                         .allowedHeaders("*");  // Permite todos los encabezados
+
             }
         };
     }

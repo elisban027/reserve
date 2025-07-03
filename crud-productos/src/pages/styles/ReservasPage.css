@@ -1,0 +1,57 @@
+/* src/pages/styles/ReservasPage.css */
+
+.reservas-page-container {
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-top: 20px;
+}
+
+.reservas-page-title {
+    font-size: 2.2em;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 700;
+}
+
+/* Reutilizando estilos de reservation-management-section de HomePage.css para consistencia */
+.reservation-management-section {
+    padding: 0; /* Ya tiene padding el container principal */
+    background-color: transparent; /* Fondo transparente, ya lo da el container */
+    box-shadow: none; /* Sin sombra, ya la da el container */
+    border-radius: 0;
+}
+
+/* Asegura que el botón y el título estén alineados */
+.reservation-management-section .actions-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.reservation-management-section .section-heading {
+    font-size: 1.8em;
+    color: #333;
+    font-weight: 700;
+}
+
+/* El botón ya tiene estilos en HomePage.css o index.css, si son generales */
+.button-success {
+    /* Styles are likely inherited from global styles or HomePage.css */
+}
+
+@media (max-width: 768px) {
+    .reservas-page-title {
+        font-size: 1.8em;
+    }
+    .reservas-page-container {
+        padding: 20px;
+    }
+    .reservation-management-section .actions-bar {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

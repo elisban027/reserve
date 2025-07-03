@@ -1,0 +1,198 @@
+/* src/components/layout/styles/Sidebar.css */
+
+.sidebar {
+    width: 280px; /* Ancho fijo para la barra lateral */
+    flex-shrink: 0; /* No se encoge */
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+    margin-right: 30px; /* Espacio a la derecha del sidebar */
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Espacio entre secciones del sidebar */
+}
+
+.sidebar-section {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.sidebar-section:last-child {
+    border-bottom: none; /* No hay borde en la última sección */
+}
+
+.sidebar-heading {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Checkbox Group */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #555;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: #ff6f00; /* Naranja */
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/* Sidebar List (for Especiales) */
+.sidebar-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar-link {
+    color: #555;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.2s ease, font-weight 0.2s ease;
+    padding: 5px 0;
+    display: block;
+}
+
+.sidebar-link:hover {
+    color: #ff6f00;
+    font-weight: 600;
+}
+
+/* Price Range Tags */
+.price-range {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.price-tag {
+    background-color: #f0f2f5;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 8px 15px;
+    font-size: 0.9em;
+    color: #555;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.price-tag:hover {
+    background-color: #e0e2e5;
+    border-color: #bbb;
+}
+
+.price-tag.active {
+    background-color: #ff6f00;
+    color: white;
+    border-color: #ff6f00;
+    font-weight: 600;
+}
+
+/* Media Queries para Sidebar */
+@media (max-width: 992px) {
+    .sidebar {
+        width: 100%; /* Ocupa todo el ancho */
+        margin-right: 0;
+        margin-bottom: 30px; /* Espacio debajo del sidebar */
+        order: -1; /* Mueve el sidebar antes del contenido principal en móvil */
+    }
+    .sidebar-section {
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .sidebar {
+        padding: 15px;
+    }
+    .sidebar-heading {
+        font-size: 1.1em;
+        margin-bottom: 10px;
+    }
+    .checkbox-container {
+        font-size: 0.9em;
+        padding-left: 25px;
+    }
+    .checkmark {
+        width: 18px;
+        height: 18px;
+    }
+    .checkmark:after {
+        left: 6px;
+        top: 2px;
+        width: 5px;
+        height: 10px;
+    }
+    .price-tag {
+        padding: 6px 12px;
+        font-size: 0.85em;
+    }
+}

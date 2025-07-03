@@ -1,0 +1,114 @@
+/* src/components/styles/ReservaForm.css */
+
+.reserva-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px; /* Espacio uniforme entre grupos de formulario */
+    padding: 10px 0;
+}
+
+.form-group {
+    /* No se necesita margin-bottom aquí si usamos gap en el padre */
+}
+
+.form-group label {
+    display: block; /* Etiqueta en su propia línea */
+    margin-bottom: 8px; /* Espacio entre etiqueta y input */
+    font-weight: 600; /* Texto de etiqueta más negrita */
+    color: #4a4a4a; /* Color de texto más profesional */
+    font-size: 0.9em; /* Tamaño de fuente ligeramente más pequeño */
+    text-transform: uppercase; /* Mayúsculas para las etiquetas */
+    letter-spacing: 0.5px; /* Espaciado entre letras */
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="time"],
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 12px 15px; /* Más padding para una mejor interacción */
+    border: 1px solid #dcdcdc; /* Borde más suave */
+    border-radius: 8px; /* Bordes más redondeados */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+    font-size: 1em;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #f9f9f9; /* Fondo suave para los inputs */
+}
+
+.form-group input::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="date"]:focus,
+.form-group input[type="time"]:focus,
+.form-group input[type="number"]:focus {
+    border-color: #007bff; /* Borde azul al enfocar */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15); /* Sombra suave al enfocar */
+    outline: none; /* Elimina el contorno por defecto del navegador */
+    background-color: #fff; /* Fondo blanco al enfocar */
+}
+
+/* Estilo para campos deshabilitados (identificadorMesa en edición) */
+.form-group .input-disabled {
+    background-color: #e9ecef; /* Fondo gris claro */
+    color: #6c757d; /* Texto gris más oscuro */
+    cursor: not-allowed;
+    border-color: #ced4da;
+}
+
+/* Sección de acciones del formulario (botón de enviar) */
+.form-actions {
+    display: flex;
+    justify-content: center; /* Centra el botón */
+    margin-top: 30px; /* Espacio superior */
+}
+
+.button {
+    padding: 14px 30px; /* Padding generoso */
+    border: none;
+    border-radius: 30px; /* Forma de píldora */
+    font-weight: 700; /* Más negrita */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    font-size: 1.05em;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.button-primary {
+    background-color: #ff6f00; /* Naranja vibrante para acción principal */
+    color: white;
+    box-shadow: 0 6px 15px rgba(255, 111, 0, 0.3); /* Sombra más pronunciada */
+}
+
+.button-primary:hover {
+    background-color: #e66000; /* Naranja más oscuro al pasar el ratón */
+    transform: translateY(-3px); /* Efecto de "levantar" */
+    box-shadow: 0 8px 20px rgba(255, 111, 0, 0.4);
+}
+
+.button-primary:active {
+    transform: translateY(0); /* Vuelve a la posición original al clickear */
+    box-shadow: 0 2px 5px rgba(255, 111, 0, 0.3);
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 600px) {
+    .reserva-form {
+        gap: 15px;
+    }
+    .form-group label {
+        font-size: 0.85em;
+    }
+    .form-group input {
+        padding: 10px 12px;
+        font-size: 0.95em;
+    }
+    .button-primary {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+}

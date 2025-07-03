@@ -21,7 +21,7 @@ Headers: Content-Type: application/json
 Body (raw, JSON)
 {
 "nombre": "Nuevo Producto",
-"descripcion": "Descripción del nuevo producto",
+"descripcion": "Descripción del nuevo reserva",
 "precio": 19.99,
 "stock": 100
 }

@@ -1,13 +1,80 @@
-body {
+/* src/index.css */
+/* src/index.css */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
+/* ... el resto del código CSS global que te proporcioné ... */
+/* Importar Font Awesome para iconos (asegúrate de que esta URL sea accesible) */
+/* Es crucial para que se vean los iconos en Header, Footer, Cards, etc. */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
+
+
+/* ------------------------------------- */
+/* --- RESET BÁSICO Y ESTILOS GLOBALES --- */
+/* ------------------------------------- */
+
+/* Reinicio de márgenes y paddings para todos los elementos */
+*,
+*::before,
+*::after {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box; /* Modelo de caja universal */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Estilos para el cuerpo del documento */
+body {
+  font-family: 'Open Sans', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6; /* Altura de línea para mejor legibilidad */
+  color: #333; /* Color de texto principal */
+  background-color: #f0f2f5; /* Fondo general de la página */
+  -webkit-font-smoothing: antialiased; /* Suavizado de fuentes para Webkit */
+  -moz-osx-font-smoothing: grayscale; /* Suavizado de fuentes para Firefox */
+  scroll-behavior: smooth; /* Desplazamiento suave */
+  overflow-x: hidden; /* Evita el scroll horizontal no deseado por elementos fuera de flujo */
+}
+
+/* Contenedor principal donde se monta la app React */
+#root {
+  min-height: 100vh; /* Ocupa al menos el 100% de la altura de la ventana */
+  display: flex;
+  flex-direction: column; /* Asegura que el footer se quede abajo */
+}
+
+/* Estilo para el contenedor del modal (importante para createPortal) */
+#modal-root {
+  position: relative; /* Asegura que esté en el flujo del DOM */
+  z-index: 9999; /* Asegura que el modal siempre esté por encima de todo */
+}
+
+/* Estilos de enfoque para elementos interactivos (accesibilidad) */
+:focus {
+  outline: 2px solid #007bff; /* Borde azul al enfocar */
+  outline-offset: 2px; /* Separación del borde */
+}
+
+/* Estilos para enlaces */
+a {
+  color: #007bff; /* Color de enlace por defecto */
+  text-decoration: none; /* Sin subrayado por defecto */
+  transition: color 0.2s ease; /* Transición suave en el color */
+}
+
+a:hover {
+  color: #0056b3; /* Color de enlace al pasar el ratón */
+  text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+
+/* Estilos básicos para los botones para consistencia */
+button {
+  font-family: inherit; /* Hereda la fuente del body */
+  border: none;
+  cursor: pointer;
+  background: none; /* Quita el fondo por defecto */
+}
+/* src/index.css */
+/* ... Tus estilos globales ... */
+
+.main-layout-content-router {
+  flex: 1; /* Permite que el área de la ruta ocupe el espacio disponible entre Header y Footer */
+  display: flex;
+  flex-direction: column; /* Asegura que el contenido dentro de la ruta también se apile si es necesario */
 }
